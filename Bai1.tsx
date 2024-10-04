@@ -48,8 +48,23 @@ function HomeScreen({ navigation }) {
 
 function DetailsScreen() {
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Details Screen</Text>
+    <View style={{ flex: 1,backgroundColor:'white',width:360}}>
+      <View style={styles.row}>
+        <Image source={require('./assets/vs_blue.png')} style={{width:112,height:132,marginLeft:4}}/>
+        <Text style={styles.text_dt}>Điện Thoại Vsmart Joy 3 Hàng chính hãng</Text>
+      </View>
+      <View style={{backgroundColor:'#C4C4C4',marginTop:27}}>
+        <Text style={styles.text_mau}>Chọn một màu bên dưới:</Text>
+        <View style={{flexDirection:'column',marginTop:34,justifyContent:'space-between',height:350,alignItems:'center'}}>
+          <TouchableOpacity style={styles.btn_xanh}></TouchableOpacity>
+          <TouchableOpacity style={styles.btn_do}></TouchableOpacity>
+          <TouchableOpacity style={styles.btn_den}></TouchableOpacity>
+          <TouchableOpacity style={styles.btn_xanhduong}></TouchableOpacity>
+        </View>
+        <TouchableOpacity style={{width:326,height:44,alignItems:'center',borderRadius:10}}>
+          <Text></Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 }
@@ -59,7 +74,7 @@ const Stack = createNativeStackNavigator();
 function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
+      <Stack.Navigator initialRouteName="Details">
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="Details" component={DetailsScreen} />
       </Stack.Navigator>
@@ -136,6 +151,42 @@ const styles = StyleSheet.create({
     fontWeight:400,
     fontSize:15,
     color:'#fff',
+  },
+  text_dt:{
+    fontFamily:'Roboto',
+    fontWeight:400,
+    fontSize:15,
+    width:164,
+    height:36,
+    marginTop:17,
+    marginLeft:10
+  },
+  text_mau:{
+    fontFamily:'Roboto',
+    fontWeight:400,
+    fontSize:18,
+    marginLeft:17,
+    marginTop:10
+  },
+  btn_xanh:{
+    width:85,
+    height:80,
+    backgroundColor:'#C5F1FB',
+  },
+  btn_do:{
+    width:85,
+    height:80,
+    backgroundColor:'#F30D0D',
+  },
+  btn_den:{
+    width:85,
+    height:80,
+    backgroundColor:'#000000',
+  },
+  btn_xanhduong:{
+    width:85,
+    height:80,
+    backgroundColor:'#234896',
   },
 });
 export default App;
